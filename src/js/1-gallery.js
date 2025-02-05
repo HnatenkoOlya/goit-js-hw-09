@@ -1,5 +1,3 @@
-import SimpleLightbox from "simplelightbox";
-import "simplelightbox/dist/simple-lightbox.min.css";
 const images = [
       {
         preview:
@@ -80,18 +78,28 @@ const images = [
 
     gallery.insertAdjacentHTML("beforeend", markup);
 
-    const link = document.querySelector(".gallery-link");
-    link = link.preventDefault();
+    import SimpleLightbox from "simplelightbox";
+    import "simplelightbox/dist/simple-lightbox.min.css";
 
-    gallery.addEventListener("click", clickGallery);
-    function clickGallery(event)  {
-       event.preventDefault();
+    const lightbox = new SimpleLightbox('.gallery a', {
+      captionsData: 'alt',
+      captionPosition: 'bottom',
+      captionDelay: 250,
+    });
+    
+  
+
+    //const link = document.querySelector(".gallery-link");
+    //link = link.preventDefault();
+
+    //gallery.addEventListener("click", clickGallery);
+    //function clickGallery(event)  {
+      // event.preventDefault();
           //const link = event.target.closest(".gallery-image");
           //if (!link) {
            //const largeImage = link.dataset.source;
             //console.log(largeImage); 
-            //return; 
-            }
+            //return; }
           //const largeImage = link.dataset.source;
           //const instance = basicLightbox.create(`
           //  <img src="${largeImage}" width="800" height="600">`)
